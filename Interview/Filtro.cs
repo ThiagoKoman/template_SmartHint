@@ -10,6 +10,11 @@
         public Filtro()
         {
             InitializeComponent();
+
+            filter_tel.Mask = "(99) 9999-9999";
+
+            // Configure a propriedade TextMaskFormat para incluir literais na propriedade Text
+            filter_tel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
         }
 
         private void Filtro_Load(object sender, EventArgs e)

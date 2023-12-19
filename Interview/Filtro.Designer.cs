@@ -32,13 +32,13 @@
             filter_name = new TextBox();
             filter_email = new TextBox();
             label2 = new Label();
-            filter_tel = new TextBox();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             filter_data = new DateTimePicker();
             filter_block = new ComboBox();
             button1 = new Button();
+            filter_tel = new MaskedTextBox();
             SuspendLayout();
             // 
             // label1
@@ -74,14 +74,6 @@
             label2.Size = new Size(41, 15);
             label2.TabIndex = 2;
             label2.Text = "E-mail";
-            // 
-            // filter_tel
-            // 
-            filter_tel.Location = new Point(12, 130);
-            filter_tel.Name = "filter_tel";
-            filter_tel.PlaceholderText = "Telefone do Cliente";
-            filter_tel.Size = new Size(240, 23);
-            filter_tel.TabIndex = 5;
             // 
             // label3
             // 
@@ -137,17 +129,25 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // filter_tel
+            // 
+            filter_tel.Location = new Point(12, 130);
+            filter_tel.Mask = "(99) 99999-9999";
+            filter_tel.Name = "filter_tel";
+            filter_tel.Size = new Size(240, 23);
+            filter_tel.TabIndex = 4;
+            // 
             // Filtro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(264, 335);
+            Controls.Add(filter_tel);
             Controls.Add(button1);
             Controls.Add(filter_block);
             Controls.Add(filter_data);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(filter_tel);
             Controls.Add(label3);
             Controls.Add(filter_email);
             Controls.Add(label2);
@@ -166,12 +166,12 @@
         private TextBox filter_name;
         private TextBox filter_email;
         private Label label2;
-        private TextBox filter_tel;
         private Label label3;
         private Label label4;
         private Label label5;
         private DateTimePicker filter_data;
         private ComboBox filter_block;
         private Button button1;
+        private MaskedTextBox filter_tel;
     }
 }

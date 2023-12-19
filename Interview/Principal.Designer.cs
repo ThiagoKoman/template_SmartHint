@@ -63,9 +63,14 @@
             // 
             dataGrid.AllowUserToAddRows = false;
             dataGrid.AllowUserToDeleteRows = false;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeRows = false;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGrid.EnableHeadersVisualStyles = false;
             dataGrid.Location = new Point(12, 112);
             dataGrid.Name = "dataGrid";
+            dataGrid.RowHeadersVisible = false;
+            dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.Size = new Size(776, 286);
             dataGrid.TabIndex = 2;
             dataGrid.CellContentClick += dataGrid_CellContentClick;

@@ -1,0 +1,20 @@
+# Ignorar arquivos de compilação e saída
+bin/
+obj/
+
+# Ignorar arquivos temporários
+*.user
+*.suo
+*.cache
+
+# Ignorar arquivos específicos do Visual Studio
+*.suo
+*.user
+*.sln.docstates
+[Tt]humbs.db
+[Rr]e[Ss]harper/
+
+# Ignorar pacotes NuGet
+packages/
+*.nupkg
+*.pdb

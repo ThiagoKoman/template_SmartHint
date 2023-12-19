@@ -34,7 +34,6 @@
             input_nome = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            input_telefone = new TextBox();
             label4 = new Label();
             input_data = new DateTimePicker();
             label6 = new Label();
@@ -43,7 +42,6 @@
             label7 = new Label();
             label8 = new Label();
             input_inscricao = new TextBox();
-            input_cpf = new TextBox();
             input_genero = new ComboBox();
             label9 = new Label();
             input_nascimento = new DateTimePicker();
@@ -56,6 +54,7 @@
             input_confirmacaoSenha = new TextBox();
             button2 = new Button();
             groupBox1 = new GroupBox();
+            input_cpf = new MaskedTextBox();
             input_inscricaoIsenta = new CheckBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
@@ -73,6 +72,7 @@
             toolTip9 = new ToolTip(components);
             toolTip10 = new ToolTip(components);
             toolTip11 = new ToolTip(components);
+            input_telefone = new MaskedTextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -124,15 +124,6 @@
             label3.Size = new Size(51, 15);
             label3.TabIndex = 5;
             label3.Text = "Telefone";
-            // 
-            // input_telefone
-            // 
-            input_telefone.Location = new Point(12, 119);
-            input_telefone.MaxLength = 11;
-            input_telefone.Name = "input_telefone";
-            input_telefone.PlaceholderText = "Telefone do cliente";
-            input_telefone.Size = new Size(248, 23);
-            input_telefone.TabIndex = 4;
             // 
             // label4
             // 
@@ -210,16 +201,6 @@
             input_inscricao.PlaceholderText = "Inscrição estadual do cliente";
             input_inscricao.Size = new Size(248, 23);
             input_inscricao.TabIndex = 8;
-            // 
-            // input_cpf
-            // 
-            input_cpf.Location = new Point(274, 109);
-            input_cpf.MaxLength = 14;
-            input_cpf.Name = "input_cpf";
-            input_cpf.PlaceholderText = "Nome ou razão social do cliente";
-            input_cpf.Size = new Size(248, 23);
-            input_cpf.TabIndex = 9;
-            input_cpf.TextChanged += input_cpf_TextChanged;
             // 
             // input_genero
             // 
@@ -316,11 +297,11 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(input_cpf);
             groupBox1.Controls.Add(input_inscricaoIsenta);
             groupBox1.Controls.Add(input_tipo);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(input_inscricaoFisica);
-            groupBox1.Controls.Add(input_cpf);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(input_inscricao);
             groupBox1.Controls.Add(label8);
@@ -334,6 +315,14 @@
             groupBox1.TabIndex = 29;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informações pessoais";
+            // 
+            // input_cpf
+            // 
+            input_cpf.Enabled = false;
+            input_cpf.Location = new Point(274, 109);
+            input_cpf.Name = "input_cpf";
+            input_cpf.Size = new Size(248, 23);
+            input_cpf.TabIndex = 9;
             // 
             // input_inscricaoIsenta
             // 
@@ -452,11 +441,20 @@
             // 
             toolTip11.ToolTipTitle = " Cadastre a senha de acesso do seu Cliente;";
             // 
+            // input_telefone
+            // 
+            input_telefone.Location = new Point(12, 122);
+            input_telefone.Mask = "(99) 99999-9999";
+            input_telefone.Name = "input_telefone";
+            input_telefone.Size = new Size(248, 23);
+            input_telefone.TabIndex = 4;
+            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(551, 594);
+            Controls.Add(input_telefone);
             Controls.Add(label5);
             Controls.Add(input_email);
             Controls.Add(groupBox3);
@@ -466,7 +464,6 @@
             Controls.Add(input_data);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(input_telefone);
             Controls.Add(label2);
             Controls.Add(input_nome);
             Controls.Add(button1);
@@ -491,7 +488,6 @@
         private TextBox input_nome;
         private Label label2;
         private Label label3;
-        private TextBox input_telefone;
         private Label label4;
         private DateTimePicker input_data;
         private Label label6;
@@ -500,7 +496,6 @@
         private Label label7;
         private Label label8;
         private TextBox input_inscricao;
-        private TextBox input_cpf;
         private ComboBox input_genero;
         private Label label9;
         private DateTimePicker input_nascimento;
@@ -530,5 +525,7 @@
         private ToolTip toolTip9;
         private ToolTip toolTip10;
         private ToolTip toolTip11;
+        private MaskedTextBox input_telefone;
+        private MaskedTextBox input_cpf;
     }
 }

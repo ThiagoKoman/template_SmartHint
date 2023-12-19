@@ -56,17 +56,31 @@ namespace Interview
                 var dataTable = new DataTable();
                 adaptador.Fill(dataTable);
 
+                if (dataGrid.Columns.Contains("Selecionar"))
+                {
+                    dataGrid.Columns.Remove("Selecionar");
+                }
+
+                //Adicionando checkbox na primeira coluna
+                DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                checkBoxColumn.HeaderText = "Selecionar";
+                checkBoxColumn.Name = "Selecionar";
+                checkBoxColumn.ReadOnly = false;
+                dataGrid.Columns.Insert(0, checkBoxColumn);
+
+
                 if (dataGrid.Columns.Contains("Ação"))
                 {
                     dataGrid.Columns.Remove("Ação");
-
                 }
-
-
+                
+                //Adicionando botão de edição na ultima coluna
                 DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
                 buttonColumn.Name = "Ação";
                 buttonColumn.Text = "Editar";
                 buttonColumn.UseColumnTextForButtonValue = true;
+
+               
 
                 dataGrid.DataSource = dataTable;
                 dataGrid.Columns.Add(buttonColumn);

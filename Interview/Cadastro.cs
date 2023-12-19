@@ -18,6 +18,9 @@ namespace Interview
             cliente = client;
             metodo = metod;
             InitializeComponent();
+
+            input_cpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            input_telefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
         }
 
         private void Cadastro_Load(object sender, EventArgs e)
@@ -134,6 +137,8 @@ namespace Interview
 
         private void input_tipo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            input_cpf.Enabled = true;
+
             if (input_tipo.Text == "Física")
             {
                 input_genero.Enabled = true;
@@ -145,6 +150,8 @@ namespace Interview
                 input_inscricaoIsenta.Enabled = false;
                 input_inscricaoIsenta.Visible = false;
                 input_inscricaoIsenta.Checked = false;
+                input_cpf.Mask = "999.999.999-99";
+                input_cpf.MaxLength = 14;
 
             }
             else
@@ -157,6 +164,8 @@ namespace Interview
                 input_inscricaoFisica.Checked = false;
                 input_inscricaoIsenta.Enabled = true;
                 input_inscricaoIsenta.Visible = true;
+                input_cpf.Mask = "99.999.999/9999-99";
+                input_cpf.MaxLength = 18;
             }
         }
 
@@ -177,11 +186,11 @@ namespace Interview
         {
             if (input_inscricaoIsenta.Checked)
             {
-                input_inscricaoIsenta.Enabled = true;
+                input_inscricao.Enabled = false;
             }
             else
             {
-                input_inscricaoIsenta.Enabled = false;
+                input_inscricao.Enabled = true;
             }
         }
 
